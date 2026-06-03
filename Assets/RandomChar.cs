@@ -35,6 +35,7 @@ public class RandomChar : MonoBehaviour
 
     IEnumerator CharLoop(string selectedChar)
     {
+        Event.toggleOn.Invoke();
         float inputCheckTimer = timerLength;
 
         while (inputCheckTimer > 0f)
@@ -57,7 +58,6 @@ public class RandomChar : MonoBehaviour
                             Debug.LogError("Failed Match");
                         }
                     }
-                    Event. 
                     StartCoroutine(WaitBetweenInputs());
                     yield break;
                 }
@@ -75,6 +75,7 @@ public class RandomChar : MonoBehaviour
 
     public IEnumerator WaitBetweenInputs()
     {
+        Event.toggleOff.Invoke();
         yield return new WaitForSeconds(waitTime);
         SelectChar();
     }
