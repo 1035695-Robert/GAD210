@@ -1,12 +1,21 @@
+using JetBrains.Annotations;
 using System.Collections;
+using System.Linq;
+using TMPro;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class RandomChar : MonoBehaviour
 {
-    string listOfChar = "ABCDEFGHIJKLMNPOQRSTUVWXYZ1234567890";
+    string listOfChar = "1234";
+    //abcdefghijklmnopqrstuvwxyz
     [SerializeField] char[] charArray;
-    [SerializeField] float timerLength;
+    [SerializeField] float timerLength = 2;
+    float waitTime = 0.5f;
+
+    public TextMeshProUGUI displayKey;
+
 
 
     void Start()
@@ -19,38 +28,54 @@ public class RandomChar : MonoBehaviour
     {
         int index = Random.Range(0, charArray.Length);
         string selectedChar = charArray[index].ToString();
-        Debug.Log("selected Char: " + selectedChar);
-        StartCoroutine(RandomCharLoop(selectedChar));
+        displayKey.text = selectedChar;
+
+        StartCoroutine(CharLoop(selectedChar));
     }
 
-    IEnumerator RandomCharLoop(string selectedChar)
+    IEnumerator CharLoop(string selectedChar)
     {
         float inputCheckTimer = timerLength;
-        while (true)
+
+        while (inputCheckTimer > 0f)
         {
             if (Keyboard.current.anyKey.wasPressedThisFrame)
             {
-                foreach (var key in Keyboard.current.allKeys)
+                string pressedKey = Keyboard.current.allKeys.FirstOrDefault(k => k.wasPressedThisFrame).name;
+                foreach (var c in charArray)
                 {
-                    if (key.wasPressedThisFrame)
+                    if (pressedKey == c.ToString())
                     {
-
-                        string pressedKey = key.displayName;
-
+                        Debug.Log(pressedKey);
                         if (pressedKey == selectedChar)
                         {
                             Debug.Log("correct match");
+                            
                         }
                         else
                         {
                             Debug.LogError("Failed Match");
                         }
-                        Debug.Log(pressedKey);
-                        SelectChar();
                     }
+                    Event. 
+                    StartCoroutine(WaitBetweenInputs());
+                    yield break;
                 }
+
+               
+
             }
+
+            inputCheckTimer -= Time.deltaTime;
             yield return null;
         }
+        StartCoroutine(WaitBetweenInputs());
+        yield break;
+    }
+
+    public IEnumerator WaitBetweenInputs()
+    {
+        yield return new WaitForSeconds(waitTime);
+        SelectChar();
     }
 }
