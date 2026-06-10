@@ -17,8 +17,6 @@ public class ClickedShape : MonoBehaviour, IPointerClickHandler
         textSelection = FindAnyObjectByType<QuickTimeEvent>();
     }
 
-
-
     public void OnPointerClick(PointerEventData eventData)
     {
         textSelection.Clicked(this.name);

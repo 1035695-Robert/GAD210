@@ -16,9 +16,18 @@ public class QuickTimeEvent : MonoBehaviour
     Color newColor;
     public float baseTime;
 
+
+    public int correct;
+    public int incorrect;
+    public int missed;
+
     bool isClicked;
     public void Start()
     {
+        incorrect = 0;
+        correct = 0;
+        missed = 0;
+
         listFinder = GetComponent<ShapesInCircle>();
         StartRound();
     }
@@ -47,13 +56,13 @@ public class QuickTimeEvent : MonoBehaviour
             {
                 if(shapeName == targetName)
                 {
-                    Debug.Log("Correct");
+                    correct++;
                     StartCoroutine(WaitBetweenInputs());
                     yield break;
                 }
                 else
                 {
-                    Debug.Log("wrong");
+                    incorrect++;
                     StartCoroutine(WaitBetweenInputs());
                     yield break;
                 }
@@ -62,6 +71,7 @@ public class QuickTimeEvent : MonoBehaviour
             timer -= Time.deltaTime;
             yield return null;
         }
+        missed++;
         StartCoroutine(WaitBetweenInputs());
         yield return null;
     }
@@ -84,5 +94,10 @@ public class QuickTimeEvent : MonoBehaviour
     {
         List<ShapesAndColours> sc = listFinder.ShapesAndColours[Random.Range(0, listFinder.ShapesAndColours.Count)].Shapes;
         return sc;
+    }
+
+    public void GameEnd()
+    {
+        StopAllCoroutines();
     }
 }
