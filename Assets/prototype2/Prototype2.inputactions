@@ -14,21 +14,12 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Up",
-                    "type": "Button",
-                    "id": "6477a052-1748-4515-821f-ebf9541caf09",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "72b85e58-59c3-4363-8534-21520ded89fc",
+                    "id": "8121f40d-0b56-453b-a6e6-83cbaa20a4ec",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -39,7 +30,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "18c1ab7b-a84a-458e-9f85-9d7b5768febc",
+                    "id": "0f8b1e07-569c-4fbd-ac0f-77cd79a6ebd6",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -50,7 +41,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "0ef27195-df92-4f64-abc8-cbbff76b4e18",
+                    "id": "14781c97-f3f2-48d7-835a-9780b7a535d4",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -61,7 +52,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "b8bd3c65-b8b9-4563-8612-7f1de4982164",
+                    "id": "77a272b7-3c2e-4856-b629-ae724a1c6166",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -72,7 +63,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "294a2f08-547e-41fa-ba9d-11741db01fb4",
+                    "id": "5911b530-2c65-4a62-be0f-3c42547103e3",
                     "path": "",
                     "interactions": "",
                     "processors": "",
@@ -80,17 +71,6 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "72dbb0d8-2dcb-4895-8f32-234354681a3f",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Up",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }

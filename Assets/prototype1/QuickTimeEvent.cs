@@ -22,7 +22,15 @@ public class QuickTimeEvent : MonoBehaviour
     public int missed;
 
     bool isClicked;
-    public void Start()
+    private void OnEnable()
+    {
+        ShapesInCircle.gameplay += Game;
+    }
+    private void OnDisable()
+    {
+        ShapesInCircle.gameplay -= Game;
+    }
+    public void Game()
     {
         incorrect = 0;
         correct = 0;

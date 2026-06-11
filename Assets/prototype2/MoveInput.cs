@@ -12,11 +12,20 @@ public class MoveInput : KeyBinding
     }
     public override void Binding(string keyPath)
     {
-  
-       
+        InputAction moveAction = InputManager.Instance.Controls.Player.Move;
 
-        InputManager.Instance.Controls.Player.Up.ApplyBindingOverride(0, keyPath);
-        Debug.Log($"{InputManager.Instance.Controls.Player.Up} rebound to {keyPath}");
-      
+        Debug.Log(moveAction.bindings.ToArray());
+
+        for (int i = 0; i < moveAction.bindings.Count; i++)
+        {
+            if (moveAction.bindings[i].isPartOfComposite && moveAction.bindings[i].name == inputVector.ToLower())
+            {
+                InputManager.Instance.Controls.Player.Move.Disable();
+                moveAction.ApplyBindingOverride(i, keyPath);
+                Debug.Log($"{moveAction.bindings[i].name} rebound to {keyPath}");
+                InputManager.Instance.Controls.Player.Move.Enable();
+                break;
+            }
+        }
     }
 }

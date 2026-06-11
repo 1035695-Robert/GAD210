@@ -86,7 +86,7 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
     {
         asset = InputActionAsset.FromJson(@"{
     ""version"": 1,
-    ""name"": ""Prototype 2"",
+    ""name"": ""Prototype2"",
     ""maps"": [
         {
             ""name"": ""Player"",
@@ -100,21 +100,12 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Up"",
-                    ""type"": ""Button"",
-                    ""id"": ""6477a052-1748-4515-821f-ebf9541caf09"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""72b85e58-59c3-4363-8534-21520ded89fc"",
+                    ""id"": ""8121f40d-0b56-453b-a6e6-83cbaa20a4ec"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -125,7 +116,7 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""18c1ab7b-a84a-458e-9f85-9d7b5768febc"",
+                    ""id"": ""0f8b1e07-569c-4fbd-ac0f-77cd79a6ebd6"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
@@ -136,7 +127,7 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""0ef27195-df92-4f64-abc8-cbbff76b4e18"",
+                    ""id"": ""14781c97-f3f2-48d7-835a-9780b7a535d4"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
@@ -147,7 +138,7 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""b8bd3c65-b8b9-4563-8612-7f1de4982164"",
+                    ""id"": ""77a272b7-3c2e-4856-b629-ae724a1c6166"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
@@ -158,7 +149,7 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""294a2f08-547e-41fa-ba9d-11741db01fb4"",
+                    ""id"": ""5911b530-2c65-4a62-be0f-3c42547103e3"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
@@ -166,17 +157,6 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""72dbb0d8-2dcb-4895-8f32-234354681a3f"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Up"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,7 +166,6 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Up = m_Player.FindAction("Up", throwIfNotFound: true);
     }
 
     ~@Prototype2()
@@ -268,7 +247,6 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Up;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -284,10 +262,6 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Player_Move;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Up".
-        /// </summary>
-        public InputAction @Up => m_Wrapper.m_Player_Up;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -317,9 +291,6 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Up.started += instance.OnUp;
-            @Up.performed += instance.OnUp;
-            @Up.canceled += instance.OnUp;
         }
 
         /// <summary>
@@ -334,9 +305,6 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Up.started -= instance.OnUp;
-            @Up.performed -= instance.OnUp;
-            @Up.canceled -= instance.OnUp;
         }
 
         /// <summary>
@@ -384,12 +352,5 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Up" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnUp(InputAction.CallbackContext context);
     }
 }

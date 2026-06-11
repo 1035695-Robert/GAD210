@@ -15,7 +15,7 @@ public class DragAndDrop : MonoBehaviour
     [SerializeField] private float mouseDragPhysicsSpeed = 10;
     [SerializeField] float mouseDragSpeed = .1f;
     private Vector2 velocity = Vector2.zero;
-    private WaitForFixedUpdate waitForFixedUpdate;
+   
     private Rigidbody2D rigid;
     private Collider2D col;
     public GameObject clickedObject;
@@ -86,7 +86,7 @@ public class DragAndDrop : MonoBehaviour
             {
                 Vector2 direction = ray.GetPoint(initialDistance) - clickedObject.transform.position;
                 rb.linearVelocity = direction * mouseDragPhysicsSpeed;
-                yield return waitForFixedUpdate;
+                yield return new WaitForEndOfFrame();
             }
             else
             {
