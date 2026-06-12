@@ -9,57 +9,102 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
+
+
+    private float moveValue;
     private Vector2 moveInput;
+    private Vector3 rotationDirection;
     Rigidbody2D rb;
-    InputAction moveAction;
+    InputAction moving;
+   
     InputAction leftRotation;
-    InputAction RightRotation ;
+    InputAction rightRotation;
+
+
+    bool isMoving, isRotating;
     private void Awake()
     {
-        moveAction = InputManager.Instance.Controls.Player.Move;
+        moving = InputManager.Instance.Controls.Player.Move;
+        
+        leftRotation = InputManager.Instance.Controls.Player.LeftRotate;
+        rightRotation = InputManager.Instance.Controls.Player.RightRotate;
 
         rb = GetComponent<Rigidbody2D>();
 
+        moving.performed += ctx => Update();
     }
     private void OnEnable()
     {
-        moveAction.performed += OnMovePerformed;
-        moveAction.canceled += OnMoveCanceled;
-
+        moving.performed += Moving;
+        moving.canceled += StopMoving;
+        
+        leftRotation.performed += RotateLeft;
+        leftRotation.canceled += StopRotation;
+       
+        rightRotation.performed += RotateRight;
+        rightRotation.canceled += StopRotation;
     }
+
 
 
     private void OnDisable()
     {
-        moveAction.performed -= OnMovePerformed;
-        moveAction.canceled -= OnMoveCanceled;
-        InputManager.Instance.Controls.Disable();
-    }
-    private void OnMovePerformed(InputAction.CallbackContext context)
-    {
-        Debug.Log("pressed");
-        moveInput = context.ReadValue<Vector2>();
-    }
-    private void OnMoveCanceled(InputAction.CallbackContext context)
-    {
-        moveInput = Vector2.zero;
-    }
+        moving.performed -= Moving;
+        moving.canceled -= StopMoving;
+        
+        leftRotation.performed -= RotateLeft;
+        leftRotation.canceled -= StopRotation;
+        rightRotation.performed -= RotateRight;
+        rightRotation.canceled -= StopRotation;
 
+        
+    }
     private void Update()
     {
-        MovePlayer();
-    }
-    private void MovePlayer()
-    {
-        Vector2 direction = new Vector2(moveInput.x, moveInput.y).normalized;
-        rb.linearVelocity = direction * moveSpeed;
-
-        if (direction != Vector2.zero)
+        if (!isRotating)
         {
-            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, direction);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            rb.linearVelocity = transform.up * moveValue;
+            if(moveValue == 0)
+            {
+                Debug.Log("STOP");
+                rb.linearVelocity = Vector2.zero;
+            }
         }
+        else if(!isMoving)
+        {
+            transform.Rotate(rotationDirection * (rotationSpeed * 10f) * Time.deltaTime);
+            rb.linearVelocity = Vector2.zero;
+        }
+
     }
+    private void Moving(InputAction.CallbackContext context)
+    {
+        moveValue = context.ReadValue<float>();
+       
+            isMoving= true;
+
+    }
+      private void StopMoving(InputAction.CallbackContext context)
+    {
+        moveValue = 0;
+        isMoving= false;
+
+    }
+    private void RotateLeft(InputAction.CallbackContext context)
+    {
+        rotationDirection = Vector3.forward;
+        isRotating = true;
+    }
+    private void RotateRight(InputAction.CallbackContext context)
+    {
+        rotationDirection = Vector3.back;
+        isRotating = true;
+    }
+
+    private void StopRotation(InputAction.CallbackContext context)
+    {
+        isRotating = false;
+    }
+
 }
 

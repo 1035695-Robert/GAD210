@@ -95,18 +95,72 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""61b928f6-4232-48e6-9f65-338ca9ee7ca3"",
+                    ""id"": ""c9b0dcbd-1c85-4253-b967-85aceba2e01a"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Backwards"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7025f5e-8f50-4551-adf2-a1753b61cde2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftRotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""54d689cf-1cf8-4d07-8470-5735b042e0a9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightRotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc93dcd1-2394-4c93-9d30-c3392ebaeb2d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""50bd626c-95d5-4105-a52d-8846f5dd1cb0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Beep"",
+                    ""type"": ""Button"",
+                    ""id"": ""28e31d64-e830-4095-acfd-f9bac20d9c1e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Colour"",
+                    ""type"": ""Button"",
+                    ""id"": ""943bef01-e0d6-4976-b236-fab3cae30bb4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""8121f40d-0b56-453b-a6e6-83cbaa20a4ec"",
-                    ""path"": ""2DVector"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""d2da7005-fdf4-481c-adc2-20ee426eff46"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -115,8 +169,8 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""0f8b1e07-569c-4fbd-ac0f-77cd79a6ebd6"",
+                    ""name"": ""positive"",
+                    ""id"": ""9f8e52ed-b879-4e8b-8f4f-0515fb3a388c"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
@@ -126,8 +180,8 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""14781c97-f3f2-48d7-835a-9780b7a535d4"",
+                    ""name"": ""negative"",
+                    ""id"": ""32040967-ac37-4597-9f67-b1bc42991f46"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
@@ -137,26 +191,70 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""77a272b7-3c2e-4856-b629-ae724a1c6166"",
+                    ""name"": """",
+                    ""id"": ""d1e19031-ab37-4ed4-9aa4-fdc68e5748bc"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Backwards"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""5911b530-2c65-4a62-be0f-3c42547103e3"",
+                    ""name"": """",
+                    ""id"": ""725819ab-5641-4e08-9894-3120cd487078"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""LeftRotate"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb902d83-a4df-42bb-a327-437c052b9396"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightRotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11f0b1be-8223-4d43-be4a-59315d60cbba"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69459e00-81e3-4f63-9c55-ef69ad2bf652"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Beep"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb6d5824-ae16-4228-a609-6a5f9672d846"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Colour"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -166,6 +264,12 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Backwards = m_Player.FindAction("Backwards", throwIfNotFound: true);
+        m_Player_LeftRotate = m_Player.FindAction("LeftRotate", throwIfNotFound: true);
+        m_Player_RightRotate = m_Player.FindAction("RightRotate", throwIfNotFound: true);
+        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_Beep = m_Player.FindAction("Beep", throwIfNotFound: true);
+        m_Player_Colour = m_Player.FindAction("Colour", throwIfNotFound: true);
     }
 
     ~@Prototype2()
@@ -247,6 +351,12 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Backwards;
+    private readonly InputAction m_Player_LeftRotate;
+    private readonly InputAction m_Player_RightRotate;
+    private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_Beep;
+    private readonly InputAction m_Player_Colour;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -262,6 +372,30 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Player_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Backwards".
+        /// </summary>
+        public InputAction @Backwards => m_Wrapper.m_Player_Backwards;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/LeftRotate".
+        /// </summary>
+        public InputAction @LeftRotate => m_Wrapper.m_Player_LeftRotate;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/RightRotate".
+        /// </summary>
+        public InputAction @RightRotate => m_Wrapper.m_Player_RightRotate;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Shoot".
+        /// </summary>
+        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Beep".
+        /// </summary>
+        public InputAction @Beep => m_Wrapper.m_Player_Beep;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Colour".
+        /// </summary>
+        public InputAction @Colour => m_Wrapper.m_Player_Colour;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -291,6 +425,24 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Backwards.started += instance.OnBackwards;
+            @Backwards.performed += instance.OnBackwards;
+            @Backwards.canceled += instance.OnBackwards;
+            @LeftRotate.started += instance.OnLeftRotate;
+            @LeftRotate.performed += instance.OnLeftRotate;
+            @LeftRotate.canceled += instance.OnLeftRotate;
+            @RightRotate.started += instance.OnRightRotate;
+            @RightRotate.performed += instance.OnRightRotate;
+            @RightRotate.canceled += instance.OnRightRotate;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
+            @Beep.started += instance.OnBeep;
+            @Beep.performed += instance.OnBeep;
+            @Beep.canceled += instance.OnBeep;
+            @Colour.started += instance.OnColour;
+            @Colour.performed += instance.OnColour;
+            @Colour.canceled += instance.OnColour;
         }
 
         /// <summary>
@@ -305,6 +457,24 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Backwards.started -= instance.OnBackwards;
+            @Backwards.performed -= instance.OnBackwards;
+            @Backwards.canceled -= instance.OnBackwards;
+            @LeftRotate.started -= instance.OnLeftRotate;
+            @LeftRotate.performed -= instance.OnLeftRotate;
+            @LeftRotate.canceled -= instance.OnLeftRotate;
+            @RightRotate.started -= instance.OnRightRotate;
+            @RightRotate.performed -= instance.OnRightRotate;
+            @RightRotate.canceled -= instance.OnRightRotate;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
+            @Beep.started -= instance.OnBeep;
+            @Beep.performed -= instance.OnBeep;
+            @Beep.canceled -= instance.OnBeep;
+            @Colour.started -= instance.OnColour;
+            @Colour.performed -= instance.OnColour;
+            @Colour.canceled -= instance.OnColour;
         }
 
         /// <summary>
@@ -352,5 +522,47 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Backwards" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBackwards(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LeftRotate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLeftRotate(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RightRotate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRightRotate(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Shoot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShoot(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Beep" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBeep(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Colour" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnColour(InputAction.CallbackContext context);
     }
 }
