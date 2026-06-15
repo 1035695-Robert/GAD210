@@ -2,10 +2,10 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class KeyBinding : MonoBehaviour
+public abstract class KeyBinding : MonoBehaviour
 {
 
-    [SerializeField] string keyName;
+    [SerializeField] string BindedKey;
      FixedJoint2D joint;
    
 
@@ -19,13 +19,10 @@ public class KeyBinding : MonoBehaviour
         joint.connectedBody = key.GetComponent<Rigidbody2D>();
         key.transform.position = transform.position;
 
-        keyName = key.name;
-        string keyPath = $"<keyboard>/{keyName.ToLower()}";
+        BindedKey = key.name;
+        string keyPath = $"<keyboard>/{BindedKey.ToLower()}";
         Binding(keyPath);
     }
 
-    public virtual void Binding(string keyPath)
-    {
-        
-    }
+    public abstract void Binding(string keyPath);
 }

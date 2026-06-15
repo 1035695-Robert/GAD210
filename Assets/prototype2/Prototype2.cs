@@ -129,7 +129,7 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Shoot"",
+                    ""name"": ""PickUp"",
                     ""type"": ""Button"",
                     ""id"": ""50bd626c-95d5-4105-a52d-8846f5dd1cb0"",
                     ""expectedControlType"": """",
@@ -138,7 +138,7 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Beep"",
+                    ""name"": ""DropItem"",
                     ""type"": ""Button"",
                     ""id"": ""28e31d64-e830-4095-acfd-f9bac20d9c1e"",
                     ""expectedControlType"": """",
@@ -147,9 +147,18 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Colour"",
+                    ""name"": ""DisplayToggle"",
                     ""type"": ""Button"",
                     ""id"": ""943bef01-e0d6-4976-b236-fab3cae30bb4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""972c0f4e-856f-4f66-8997-8df6e3c996d6"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -230,7 +239,7 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
+                    ""action"": ""PickUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -241,18 +250,29 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Beep"",
+                    ""action"": ""DropItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""bb6d5824-ae16-4228-a609-6a5f9672d846"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DisplayToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ac4ddd9-c9eb-426f-b236-82af1c91730b"",
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Colour"",
+                    ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -267,9 +287,10 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         m_Player_Backwards = m_Player.FindAction("Backwards", throwIfNotFound: true);
         m_Player_LeftRotate = m_Player.FindAction("LeftRotate", throwIfNotFound: true);
         m_Player_RightRotate = m_Player.FindAction("RightRotate", throwIfNotFound: true);
-        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
-        m_Player_Beep = m_Player.FindAction("Beep", throwIfNotFound: true);
-        m_Player_Colour = m_Player.FindAction("Colour", throwIfNotFound: true);
+        m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
+        m_Player_DropItem = m_Player.FindAction("DropItem", throwIfNotFound: true);
+        m_Player_DisplayToggle = m_Player.FindAction("DisplayToggle", throwIfNotFound: true);
+        m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
     }
 
     ~@Prototype2()
@@ -354,9 +375,10 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Backwards;
     private readonly InputAction m_Player_LeftRotate;
     private readonly InputAction m_Player_RightRotate;
-    private readonly InputAction m_Player_Shoot;
-    private readonly InputAction m_Player_Beep;
-    private readonly InputAction m_Player_Colour;
+    private readonly InputAction m_Player_PickUp;
+    private readonly InputAction m_Player_DropItem;
+    private readonly InputAction m_Player_DisplayToggle;
+    private readonly InputAction m_Player_Throw;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -385,17 +407,21 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @RightRotate => m_Wrapper.m_Player_RightRotate;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Shoot".
+        /// Provides access to the underlying input action "Player/PickUp".
         /// </summary>
-        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Beep".
+        /// Provides access to the underlying input action "Player/DropItem".
         /// </summary>
-        public InputAction @Beep => m_Wrapper.m_Player_Beep;
+        public InputAction @DropItem => m_Wrapper.m_Player_DropItem;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Colour".
+        /// Provides access to the underlying input action "Player/DisplayToggle".
         /// </summary>
-        public InputAction @Colour => m_Wrapper.m_Player_Colour;
+        public InputAction @DisplayToggle => m_Wrapper.m_Player_DisplayToggle;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Throw".
+        /// </summary>
+        public InputAction @Throw => m_Wrapper.m_Player_Throw;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -434,15 +460,18 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
             @RightRotate.started += instance.OnRightRotate;
             @RightRotate.performed += instance.OnRightRotate;
             @RightRotate.canceled += instance.OnRightRotate;
-            @Shoot.started += instance.OnShoot;
-            @Shoot.performed += instance.OnShoot;
-            @Shoot.canceled += instance.OnShoot;
-            @Beep.started += instance.OnBeep;
-            @Beep.performed += instance.OnBeep;
-            @Beep.canceled += instance.OnBeep;
-            @Colour.started += instance.OnColour;
-            @Colour.performed += instance.OnColour;
-            @Colour.canceled += instance.OnColour;
+            @PickUp.started += instance.OnPickUp;
+            @PickUp.performed += instance.OnPickUp;
+            @PickUp.canceled += instance.OnPickUp;
+            @DropItem.started += instance.OnDropItem;
+            @DropItem.performed += instance.OnDropItem;
+            @DropItem.canceled += instance.OnDropItem;
+            @DisplayToggle.started += instance.OnDisplayToggle;
+            @DisplayToggle.performed += instance.OnDisplayToggle;
+            @DisplayToggle.canceled += instance.OnDisplayToggle;
+            @Throw.started += instance.OnThrow;
+            @Throw.performed += instance.OnThrow;
+            @Throw.canceled += instance.OnThrow;
         }
 
         /// <summary>
@@ -466,15 +495,18 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
             @RightRotate.started -= instance.OnRightRotate;
             @RightRotate.performed -= instance.OnRightRotate;
             @RightRotate.canceled -= instance.OnRightRotate;
-            @Shoot.started -= instance.OnShoot;
-            @Shoot.performed -= instance.OnShoot;
-            @Shoot.canceled -= instance.OnShoot;
-            @Beep.started -= instance.OnBeep;
-            @Beep.performed -= instance.OnBeep;
-            @Beep.canceled -= instance.OnBeep;
-            @Colour.started -= instance.OnColour;
-            @Colour.performed -= instance.OnColour;
-            @Colour.canceled -= instance.OnColour;
+            @PickUp.started -= instance.OnPickUp;
+            @PickUp.performed -= instance.OnPickUp;
+            @PickUp.canceled -= instance.OnPickUp;
+            @DropItem.started -= instance.OnDropItem;
+            @DropItem.performed -= instance.OnDropItem;
+            @DropItem.canceled -= instance.OnDropItem;
+            @DisplayToggle.started -= instance.OnDisplayToggle;
+            @DisplayToggle.performed -= instance.OnDisplayToggle;
+            @DisplayToggle.canceled -= instance.OnDisplayToggle;
+            @Throw.started -= instance.OnThrow;
+            @Throw.performed -= instance.OnThrow;
+            @Throw.canceled -= instance.OnThrow;
         }
 
         /// <summary>
@@ -544,25 +576,32 @@ public partial class @Prototype2: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRightRotate(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Shoot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "PickUp" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnShoot(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Beep" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "DropItem" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnBeep(InputAction.CallbackContext context);
+        void OnDropItem(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Colour" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "DisplayToggle" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnColour(InputAction.CallbackContext context);
+        void OnDisplayToggle(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Throw" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnThrow(InputAction.CallbackContext context);
     }
 }
