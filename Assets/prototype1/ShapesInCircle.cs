@@ -17,13 +17,23 @@ public class ShapeGroup
 }
 public class ShapesInCircle : MonoBehaviour
 {
+    public delegate void GamePlay();
+
+    public static GamePlay gameplay;
+
     public List<ShapeGroup> ShapesAndColours;
     public float radius;
     public int amount = 4;
     Color newColor;
-
-
-    private void Start()
+    private void OnEnable()
+    {
+        StartGame.startGame += Game;
+    }
+    private void OnDisable()
+    {
+        StartGame.startGame -= Game;
+    }
+    private void Game()
     {
 
         int totalAmount = ShapesAndColours.Count * ShapesAndColours[0].Shapes.Count;
@@ -55,7 +65,7 @@ public class ShapesInCircle : MonoBehaviour
                 }
                 
             }
-
         }
+        gameplay.Invoke();
     }
 }
