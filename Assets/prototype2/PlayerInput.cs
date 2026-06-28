@@ -96,6 +96,7 @@ public class PlayerInput : MonoBehaviour
     }
     private void Moving(InputAction.CallbackContext context)
     {
+       
         moveValue = context.ReadValue<float>();
 
         isMoving = true;

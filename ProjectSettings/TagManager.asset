@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Draggable
   - Display
+  - Weight
+  - RedPlayer
+  - BluePlayer
   layers:
   - Default
   - TransparentFX
@@ -14,9 +17,9 @@ TagManager:
   - Water
   - UI
   - Pickup
-  - 
-  - 
-  - 
+  - 'Ground '
+  - redPlayer
+  - bluePlayer
   - 
   - 
   - 
@@ -51,6 +54,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3950025625
+    locked: 0
+  - name: gound
+    uniqueID: 403490721
+    locked: 0
+  - name: doors
+    uniqueID: 3821535327
     locked: 0
   m_RenderingLayers:
   - Default
