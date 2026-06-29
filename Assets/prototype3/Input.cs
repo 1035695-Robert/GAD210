@@ -37,8 +37,8 @@ namespace prototype3
 
         private void Update()
         {
-            if (!isHolding) playerRigidbody.linearVelocity = moveValue * moveSpeed;
-            else playerRigidbody.linearVelocity = _lockedAxis * moveValue;
+           if(!isHolding) playerRigidbody.linearVelocity = moveValue * moveSpeed;
+            else playerRigidbody.linearVelocity = _lockedAxis * moveValue * moveSpeed;
 
             if (moveValue.sqrMagnitude > 0.01f && !isHolding)
             {
@@ -50,7 +50,6 @@ namespace prototype3
             }
             else
             {
-                playerRigidbody.linearVelocity = Vector2.zero;
                 playerRigidbody.angularVelocity = 0f;
             }
         }
@@ -112,9 +111,9 @@ namespace prototype3
                 AxisLock();
                 _joint = transform.AddComponent<FixedJoint2D>();
                 _joint.connectedBody = hit.rigidbody;
+                _joint.enableCollision = true;
                 isHolding = true;
-                playerRigidbody.linearVelocity = Vector2.zero;
-                playerRigidbody.angularVelocity = 0f;
+               
             }
         }
 

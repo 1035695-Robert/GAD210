@@ -20,7 +20,7 @@ namespace prototype3
         
         public DoorNumber doorID;
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerStay2D(Collider2D other)
         {
             if (other.CompareTag("Player") || other.CompareTag("Weight"))
             {
@@ -29,7 +29,8 @@ namespace prototype3
                 Open?.Invoke(doorID);
             }
         }
-
+        
+        
         private void OnTriggerExit2D(Collider2D other)
         {
                 Close?.Invoke(doorID);
