@@ -15,6 +15,9 @@ namespace prototype3
         [SerializeField] private float rotationSpeed;
         [SerializeField] private float baseTimer;
 
+        [SerializeField] private AudioSource source;
+        [SerializeField] private AudioClip clip;
+        
         [Header("Input Action References")] [SerializeField]
         protected InputActionReference inputs;
 
@@ -63,14 +66,15 @@ namespace prototype3
         private IEnumerator StoppedMovingCountDown()
         {
             float timer = baseTimer;
-
+            source.PlayOneShot(clip);
             while (timer > 0f)
             {
                 if (moveValue != Vector2.zero)
                 {
+                    source.Stop();
                     yield break;
                 }
-
+                
                 timer -= Time.deltaTime;
                 yield return null;
             }
@@ -81,6 +85,7 @@ namespace prototype3
 
         private void ResetPlayers()
         {
+            source.Stop();
             if(_joint != null) Destroy(_joint);
             transform.position = resetTile.transform.position;
             transform.rotation = resetTile.transform.rotation;

@@ -26,61 +26,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.000000000001353" />
-      <entry key="S2" value="1.0044457458972331" />
-      <entry key="S5" value="1.4418636959237536" />
-      <entry key="S10" value="3.1642873450196407" />
-      <entry key="S30" value="7.635276562816185" />
-      <entry key="S60" value="10.179392992667188" />
-      <entry key="M2" value="12.5559092810011" />
-      <entry key="M5" value="17.06727793512395" />
-      <entry key="M10" value="34.22024370189515" />
-      <entry key="M15" value="57.6855642652345" />
-      <entry key="M30" value="116.05678020347538" />
-      <entry key="H1" value="174.66779271834494" />
-      <entry key="H2" value="217.09426544593737" />
-      <entry key="H4" value="242.76497373809121" />
-      <entry key="D1" value="266.85835160111645" />
-      <entry key="W1" value="271.2585846998263" />
+      <entry key="MS100" value="1.285399457842785E-9" />
+      <entry key="MS500" value="0.021989950004008454" />
+      <entry key="S2" value="0.6295100485945817" />
+      <entry key="S5" value="1.2565210084152636" />
+      <entry key="S10" value="1.5847462912322055" />
+      <entry key="S30" value="2.1235009989681974" />
+      <entry key="S60" value="4.155324518327765" />
+      <entry key="M2" value="8.803310991762357" />
+      <entry key="M5" value="17.413954626798063" />
+      <entry key="M10" value="34.81110961735398" />
+      <entry key="M15" value="57.564378996869145" />
+      <entry key="M30" value="115.97728509695924" />
+      <entry key="H1" value="176.57716984446395" />
+      <entry key="H2" value="221.2994317460447" />
+      <entry key="H4" value="248.63962191648352" />
+      <entry key="D1" value="274.4683534713544" />
+      <entry key="W1" value="279.20193571657614" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.955823429875182E-170" />
-      <entry key="MS500" value="1.143578360818643E-34" />
-      <entry key="S2" value="3.2701410264131417E-9" />
-      <entry key="S5" value="4.0348425576502495E-4" />
-      <entry key="S10" value="0.0200871421427791" />
-      <entry key="S30" value="0.2816035499204064" />
-      <entry key="S60" value="0.6750870939675859" />
-      <entry key="M2" value="1.430723961561309" />
-      <entry key="M5" value="3.3803574783835564" />
-      <entry key="M10" value="8.483460399125528" />
-      <entry key="M15" value="15.160401934931286" />
-      <entry key="M30" value="32.10627970091099" />
-      <entry key="H1" value="49.520895247349365" />
-      <entry key="H2" value="62.2999886638911" />
-      <entry key="H4" value="70.0875934163827" />
-      <entry key="D1" value="77.42943107188447" />
-      <entry key="W1" value="78.7734482641476" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0000000020259026" />
+      <entry key="S10" value="1.0000560582061893" />
+      <entry key="S30" value="1.0758011715395748" />
+      <entry key="S60" value="1.5415236671604955" />
+      <entry key="M2" value="2.675115883874721" />
+      <entry key="M5" value="5.290693210076964" />
+      <entry key="M10" value="10.383213501894105" />
+      <entry key="M15" value="16.855278124115898" />
+      <entry key="M30" value="33.787991689642915" />
+      <entry key="H1" value="51.75312455417505" />
+      <entry key="H2" value="65.19063619723525" />
+      <entry key="H4" value="73.46386112661509" />
+      <entry key="D1" value="81.31458934381122" />
+      <entry key="W1" value="82.75675710595668" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0011295783045950066" />
-      <entry key="MS500" value="0.2573850208597989" />
-      <entry key="S2" value="0.7166713035131791" />
-      <entry key="S5" value="1.3127452867569878" />
-      <entry key="S10" value="3.1052161980669735" />
-      <entry key="S30" value="7.8636679145886195" />
-      <entry key="S60" value="10.814332946421834" />
-      <entry key="M2" value="13.956443407294623" />
-      <entry key="M5" value="20.42323762624952" />
-      <entry key="M10" value="42.66423824874209" />
-      <entry key="M15" value="72.7936790500825" />
-      <entry key="M30" value="148.10332763543778" />
-      <entry key="H1" value="224.14144833659142" />
-      <entry key="H2" value="279.3642439945837" />
-      <entry key="H4" value="312.8356126626785" />
-      <entry key="D1" value="344.28465039280593" />
-      <entry key="W1" value="350.0315774759271" />
+      <entry key="MS100" value="0.00541058387555377" />
+      <entry key="MS500" value="0.3625087484614673" />
+      <entry key="S2" value="1.3024229094700157" />
+      <entry key="S5" value="2.0775964603034858" />
+      <entry key="S10" value="2.4832049083737298" />
+      <entry key="S30" value="3.155425316589055" />
+      <entry key="S60" value="5.654158213852905" />
+      <entry key="M2" value="11.434625180302548" />
+      <entry key="M5" value="22.668280957293295" />
+      <entry key="M10" value="45.15043412641495" />
+      <entry key="M15" value="74.36581572108447" />
+      <entry key="M30" value="149.7051543221195" />
+      <entry key="H1" value="228.2824128769845" />
+      <entry key="H2" value="286.45943498771277" />
+      <entry key="H4" value="322.0861026578835" />
+      <entry key="D1" value="355.7797193141024" />
+      <entry key="W1" value="361.9582237423114" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -117,7 +117,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../prototype 1\GAD210.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Bot_And_Ball\GAD210.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Robert Andren\Documents\prototype 1" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -172,6 +172,7 @@
       <updated>1782521866879</updated>
       <workItem from="1782521879092" duration="4063000" />
       <workItem from="1782688814618" duration="5606000" />
+      <workItem from="1782885245600" duration="1270000" />
     </task>
     <servers />
   </component>
